@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Query</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
 </head>
-<body>
+<body onresize="mudouTamanho()" >
     <header>
         <h1>Meu Site</h1>
-        <menu>
+        <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
+        <menu id="itens" >
             <ul>
                 <li><a href="#">Opção 1</a></li>
                 <li><a href="#">Opção 2</a></li>
@@ -29,5 +32,23 @@
             <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate pariatur, quas tenetur ipsa voluptates quae quia quisquam. Qui, repudiandae nostrum pariatur minima quo expedita aliquid, fuga eligendi nulla reiciendis esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, culpa cupiditate omnis praesentium saepe expedita molestiae accusantium, unde rerum repellendus, eum veniam explicabo velit facilis? Quibusdam, fuga. Consectetur, error ab?</p>
         </article>
     </main> 
+    <script>
+
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
 </body>
 </html>
